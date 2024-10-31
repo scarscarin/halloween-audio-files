@@ -48,7 +48,7 @@ audio_files = {
     "Marta Died":"https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/marta_died.wav",
     "Email Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/email_found.wav",
     "22": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav",
-    "Isabeeel": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/isabel.wav"
+    "Isabeeel": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/isabel.wav",
     "Taylor Swift": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/taylorswift.wav"  
 }
 
