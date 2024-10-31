@@ -37,7 +37,7 @@ people = {
 
 audio_files = {
     "Spirit Announcement": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/spirit_announcement.wav",
-    "Claiming Murder": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/spirit_announcement.wav"
+    "Aimee call": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/aimee_call.wav"
 }
 
 # Flask app to handle the trigger
