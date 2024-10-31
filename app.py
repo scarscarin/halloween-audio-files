@@ -38,7 +38,11 @@ people = {
 audio_files = {
     "Spirit Announcement": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/spirit_announcement.wav",
     "Aimee call": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/aimee_call.wav",
-    "Jenga": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/jenga.wav"
+    "Jenga": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/jenga.wav",
+    "Claiming Murder": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/claiming_murder.wav",
+    "Donnie Darko": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/donnie_darko.wav",
+    "Leo Died": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/leo_died.wav",
+    "Robert Smells": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/robert_smells.wav"
 }
 
 # Flask app to handle the trigger
