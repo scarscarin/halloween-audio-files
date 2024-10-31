@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Call Interface</title>
+</head>
+<body>
+    <h1>Call Interface</h1>
+    <form action="/make_call" method="post">
+        <label for="person">Select Person:</label>
+        <select name="person" id="person">
+            {% for name in people %}
+                <option value="{{ name }}">{{ name }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <label for="audio">Select Audio:</label>
+        <select name="audio" id="audio">
+            {% for title in audio_files %}
+                <option value="{{ title }}">{{ title }}</option>
+            {% endfor %}
+        </select>
+        <br><br>
+        <button type="submit">Make Call</button>
+    </form>
+</body>
+</html>
