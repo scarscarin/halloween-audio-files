@@ -45,7 +45,8 @@ audio_files = {
     "Robert Smells": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/robert_smells.wav",
     "Contract Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/contract_found.wav",
     "Marta Died":"https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/marta_died.wav",
-    "Email Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/email_found.wav" 
+    "Email Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/email_found.wav",
+    "22": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav" 
 }
 
 # Flask app to handle the trigger
