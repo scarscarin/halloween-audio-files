@@ -1,5 +1,6 @@
 from flask import Flask, request, render_template
 from twilio.rest import Client
+from twilio.twiml.voice_response import VoiceResponse
 from dotenv import load_dotenv
 import os
 
@@ -46,7 +47,8 @@ audio_files = {
     "Contract Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/contract_found.wav",
     "Marta Died":"https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/marta_died.wav",
     "Email Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/email_found.wav",
-    "22": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav" 
+    "22": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav",
+    "Isabeeel": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/isabel.wav"  
 }
 
 # Flask app to handle the trigger
@@ -75,6 +77,21 @@ def make_call():
         url=f"https://handler.twilio.com/twiml/EHbc8d282a68f14d8a4938d4444d9c8ee0?AudioFileUrl={audio_file_url}"
     )
     return f"Call initiated to {person} ({phone_number}) with audio '{audio}'"
+
+# Route to handle incoming calls
+@app.route('/incoming_call', methods=['POST'])
+def incoming_call():
+    # Create a Twilio VoiceResponse object
+    response = VoiceResponse()
+
+    # Specify the URL of the audio file you want to play
+    audio_file_url = "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav"  # Replace with your actual URL
+
+    # Use the <Play> verb to play the audio file
+    response.play(audio_file_url)
+
+    # Return the TwiML response
+    return Response(str(response), mimetype='application/xml')
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
