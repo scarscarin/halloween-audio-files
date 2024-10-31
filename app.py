@@ -1,4 +1,4 @@
-from flask import Flask, request, render_template
+from flask import Flask, request, render_template, Response
 from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse
 from dotenv import load_dotenv
@@ -48,7 +48,8 @@ audio_files = {
     "Marta Died":"https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/marta_died.wav",
     "Email Found": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/email_found.wav",
     "22": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/22.wav",
-    "Isabeeel": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/isabel.wav"  
+    "Isabeeel": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/isabel.wav"
+    "Taylor Swift": "https://github.com/scarscarin/halloween-audio-files/raw/refs/heads/main/audios/taylorswift.wav"  
 }
 
 # Flask app to handle the trigger
