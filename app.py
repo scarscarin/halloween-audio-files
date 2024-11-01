@@ -3,6 +3,8 @@ from twilio.rest import Client
 from twilio.twiml.voice_response import VoiceResponse
 from dotenv import load_dotenv
 import os
+import threading
+from datetime import datetime, timedelta
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -17,7 +19,6 @@ client = Client(account_sid, auth_token)
 people = {
     "Marta": "+34602210973",
     "Leo": "+31642153785",
-    "Spirit": "+3197008249167",
     "Veerle": "+31648723581",
     "Beer": "+31649903915",
     "Aimée": "+31623387307",
@@ -94,5 +95,32 @@ def incoming_call():
     # Return the TwiML response
     return Response(str(response), mimetype='application/xml')
 
+# Function to make a call
+def schedule_call(person, audio, delay):
+    threading.Timer(delay, make_call_scheduled, [person, audio]).start()
+
+def make_call_scheduled(person, audio):
+    phone_number = people[person]
+    audio_file_url = audio_files[audio]
+
+    # Make the call
+    call = client.calls.create(
+        to=phone_number,
+        from_=twilio_phone_number,
+        url=f"https://handler.twilio.com/twiml/EHbc8d282a68f14d8a4938d4444d9c8ee0?AudioFileUrl={audio_file_url}"
+    )
+    print(f"Call initiated to {person} ({phone_number}) with audio '{audio}'")
+
+def make_group_call():
+    for person in people:
+        make_call_scheduled(person, "22")
+            
 if __name__ == '__main__':
+    # Schedule the calls
+    now = datetime.now()
+
+    # Schedule group call at 22:24 with audio "22"
+    group_call_time = (now.replace(hour=23, minute=59, second=0, microsecond=0) - now).total_seconds()
+    threading.Timer(group_call_time, make_group_call).start()
+
     app.run(debug=True, host='0.0.0.0', port=5000)
